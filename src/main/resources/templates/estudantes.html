@@ -1,0 +1,75 @@
+<!DOCTYPE html >
+<html xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de estudantes</title>
+
+    <!--Css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-md bg-black navbar-dark" style="padding: 10px;" >
+        <a  class="navbar-brand mb-0 h1" style="font-size: 2rem;" href="#">Controle de alunos</a>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" th:href="@{/estudantes}">Controle de alunos</a></li>
+            </ul>
+        </div>
+        <a th:href="@{/estudantes/novo}" class="btn btn-primary" style="margin:0px 5px;" >Novo Cadastro</a>
+
+    </nav>
+</header>
+
+<main class="bg-dark-subtle text-black" style="height: 100vh;">
+    <br>
+    <div class="container">
+        <div class="row">
+            <h1>Lista de estudantes</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-3" style="margin:5px 0px">
+                <a th:href="@{/estudantes/novo}" class="btn btn-primary btn-sm mb3">Novo Cadastro</a>
+            </div>
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto">
+        </div>
+
+        <table class="table table-striped table-bordered"> <!--Muda a cor da alinha da tabela-->
+            <thead class="table-dark">
+            <tr>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>E-mail</th>
+                <th>Ações</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="estudante : ${estudantes}" }>
+                <!--variavel estudante : recebe o estudantes do controler que recebe do repository-->
+                <td th:text="${estudante.nome}">Nome</td>
+                <td th:text="${estudante.sobrenome}">Sobrenome</td>
+                <td th:text="${estudante.email}">E-mail</td>
+                <td>
+                    <a th:href="@{/estudantes/editar/{id}(id=${estudante.id})}" class="btn btn-warning">Editar</a>
+                    <a th:href="@{/estudantes/{id}(id=${estudante.id})}" class="btn btn-danger">Excluir</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+<footer class="page-footer font-small blue p-1" style="background-color: #333; margin:0px;" >
+    <div class="text-center">
+        <p style="margin:0px; color:white;">
+            Copyright © 2023 - by WillyamR. All rights reserved.
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>

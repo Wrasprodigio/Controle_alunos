@@ -2,8 +2,8 @@
 ### Primeiro Projeto em Java
 
 ![sistema controle de alunos](https://github.com/Wrasprodigio/Controle_alunos/assets/132852135/45dd5836-aaa7-47fb-adb5-3d71ac5284ca)
-
-
+<br>
+### Video explicando sobre o projeto
 https://github.com/Wrasprodigio/Controle_alunos/assets/132852135/d04e4c00-633c-4c1e-aa36-da352a4d8b8e
 <hr>
 
@@ -12,7 +12,7 @@ https://github.com/Wrasprodigio/Controle_alunos/assets/132852135/d04e4c00-633c-4
 O sistema se chama "Controle de Alunos", uma aplicação web que oferece uma lista de estudantes.
 
 
-🖥️ Tecnologias Utilizadas:
+🖥️ Tecnologias Utilizadas:<br>
 -Java <br>
 -Spring Boot<br>
 -Spring Security<br>
